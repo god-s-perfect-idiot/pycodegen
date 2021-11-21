@@ -1,4 +1,4 @@
-from word_gen import gibberish, sensible
+from _generator import gibberish, sensible
 from random import randint
 
 def logic(node): 

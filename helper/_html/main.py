@@ -1,21 +1,21 @@
 from random import randint
 from _loader import _init_
 from _elaborate import logic
-import word_gen
+import _generator
 
 domNodes = _init_()
 
 def generate_head():
-    domTitle = word_gen.sensible(3)
+    domTitle = _generator.sensible(3)
     domHead = f"""
         <head>
-            <title>{domTitle}<title>
+            <title>{domTitle}</title>
         </head>
     """
     return domHead
 
 def generate_body():
-    nodeCount = randint(30,100)
+    nodeCount = randint(1,20)
     body = "<body>"
     for nodeIndex in range(nodeCount):
         node = domNodes[randint(0, len(domNodes) - 1)]
@@ -30,7 +30,7 @@ def construct():
         {generate_body()}
     </html>"""
 
-def write_to_file(fileName=f"_generated/{word_gen.sensible(1)}.html"):
+def write_to_file(fileName=f"__generated/{_generator.sensible(1)}.html"):
     with open(fileName, 'w') as f:
         f.write(construct())
 
