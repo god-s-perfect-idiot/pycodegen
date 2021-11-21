@@ -21,5 +21,3 @@ def sensible(word_count):
         word_index = randint(0, len(words) - 1)
         current.append(words[word_index])
     return ' '.join(current)
-
-print(sensible(4))
